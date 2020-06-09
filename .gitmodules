@@ -1,0 +1,6 @@
+[submodule "src/fxt"]
+	path = src/fxt
+	url = https://github.com/ten-blue-links/fxt.git
+[submodule "src/lightgbm"]
+	path = src/lightgbm
+	url = https://github.com/microsoft/LightGBM.git
