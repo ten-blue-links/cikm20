@@ -4,3 +4,6 @@
 [submodule "src/lightgbm"]
 	path = src/lightgbm
 	url = https://github.com/microsoft/LightGBM.git
+[submodule "src/cpp-netlib"]
+	path = src/cpp-netlib
+	url = https://github.com/cpp-netlib/cpp-netlib
