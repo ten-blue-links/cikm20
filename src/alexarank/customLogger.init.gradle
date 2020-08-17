@@ -1,0 +1,18 @@
+useLogger(new CustomEventLogger())
+  class CustomEventLogger extends BuildAdapter implements TaskExecutionListener {
+      public void beforeExecute(Task task) {
+        if (task instanceof Exec) {
+            //println "[$task.name: ${task.commandLine.join(' ')}]";
+            println "[$task.name: ${task.commandLine}]";
+        }
+        else {
+            println "[$task.name]";
+        }
+    }
+      public void afterExecute(Task task, TaskState state) {
+        println()
+    }
+      public void buildFinished(BuildResult result) {
+        println 'build completed'
+    }
+}

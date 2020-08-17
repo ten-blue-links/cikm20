@@ -1,0 +1,52 @@
+<parameters>
+<memory>128G</memory>
+<index>clueweb09b</index>
+<storeDocs>true</storeDocs>
+<stemmer><name>krovetz</name></stemmer>
+<corpus>
+   <path>/path-to-clueweb09b/disk1/ClueWeb09_English_1</path>
+   <class>warc</class>
+   <inlink>/path-to-clueweb09b-harvestlinks/harvestlinks/ClueWeb09_English_1-links/sorted</inlink>
+</corpus>
+<!-- Indri specific -->
+<field><name>mainbody</name></field>
+<field><name>heading</name></field>
+<field><name>inlink</name></field>
+
+<!-- HTML4 -->
+<field><name>body</name></field>
+<field><name>title</name></field>
+<field><name>a</name></field>
+<field><name>h1</name></field>
+<field><name>h2</name></field>
+<field><name>h3</name></field>
+<field><name>h4</name></field>
+<field><name>h5</name></field>
+<field><name>h6</name></field>
+<field><name>table</name></field>
+<field><name>td</name></field>
+<field><name>ul</name></field>
+<field><name>ol</name></field>
+<field><name>dl</name></field>
+<field><name>blockquote</name></field>
+<field><name>address</name></field>
+<field><name>applet</name></field>
+<field><name>embed</name></field>
+<field><name>object</name></field>
+<field><name>blink</name></field>
+<field><name>marquee</name></field>
+<field><name>form</name></field>
+<field><name>strong</name></field>
+<field><name>b</name></field>
+
+<!-- HTML5 -->
+<field><name>article</name></field>
+<field><name>aside</name></field>
+<field><name>footer</name></field>
+<field><name>header</name></field>
+<field><name>hgroup</name></field>
+<field><name>nav</name></field>
+<field><name>section</name></field>
+<field><name>figcaption</name></field>
+<field><name>template</name></field>
+</parameters>

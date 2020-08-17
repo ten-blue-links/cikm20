@@ -1,0 +1,15 @@
+source $SPATH/../sh/common
+
+if [ -f $CONFIGD/dataset ]; then
+  source $CONFIGD/dataset
+else
+  err "config/dataset is missing, copy config/dataset.dist to get started"
+fi
+
+if [ ! -f "$WEBGRAPH_PATH" ]; then
+  err "The file $WEBGRAPH_PATH does not exist"
+fi
+
+if [ ! -f "$GRAPHPAIRS_PATH" ]; then
+  err "The file $GRAPHPAIRS_PATH does not exist"
+fi

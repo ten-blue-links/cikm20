@@ -1,1 +1,12 @@
+*.o
+__pycache__
 bin
+build
+config/dataset
+config/experiment
+dat/qrel
+dat/qry
+local.mk
+src/hostdocno/hostdocno
+src/alexarank/.gradle
+src/alexarank/build

@@ -1,0 +1,19 @@
+source $SPATH/../sh/common
+
+# Loading config 'experiment' overwrites `DATASETD`, so we check if it was
+# actually set to a custom location.
+OLD_DATASETD=$DATASETD
+
+if [ -f $CONFIGD/experiment ]; then
+  source $CONFIGD/experiment
+else
+  err "config/experiment is missing, copy config/experiment.dist to get started"
+fi
+
+if [ -z "$DATASETD" ]; then
+  DATASETD=$OLD_DATASETD
+fi
+
+if [ ! -d "$DATASETD" ]; then
+  err "The path '$DATASETD' does not exist"
+fi

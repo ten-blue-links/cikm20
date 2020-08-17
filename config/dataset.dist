@@ -1,0 +1,26 @@
+# Configuration variables used by shell scripts when building the dataset.
+
+_NUM_PROC=$(getconf _NPROCESSORS_ONLN)
+
+# Number of threads for `IndriRunQuery`
+INDRI_THREADS=$((_NUM_PROC / 2))
+
+# Existing Indri index path
+INDRI_INDEX_PATH="/path-to-indri-index"
+
+# Path to create the Fxt index
+FXT_INDEX_PATH="/path-to-fxt-index"
+
+# Library and header file paths
+BOOST_INCLUDE_PATH="/path-to-boost/include"
+BOOST_LIBRARY_PATH="/path-to-boost/lib"
+INDRI_INCLUDE_PATH="/path-to-indri/include"
+INDRI_LIBRARY_PATH="/path-to-indri/lib"
+
+# Path to *gzipped* ClueWeb09B WebGraph
+# http://boston.lti.cs.cmu.edu/clueweb09/WebGraph/ClueWeb09_WG_50m.graph-txt.gz
+WEBGRAPH_PATH="/path-to/ClueWeb09_WG_50m.graph-txt.gz"
+
+# Path to *text* ClueWeb09B NodeID to DOCNO pairs file
+# http://boston.lti.cs.cmu.edu/clueweb09/pagerank/ClueB-ID-DOCNO.txt.tar.gz
+GRAPHPAIRS_PATH="/path-to/ClueB-ID-DOCNO.txt"

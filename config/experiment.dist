@@ -1,0 +1,6 @@
+# Configuration variables used by shell scripts when running experiments.
+
+# Path to the dataset. Leave empty to use the default path which requires that
+# the dataset was built with `src/dataset/main.sh`. If you already have a copy
+# of the dataset elsewhere then set the `DATASETD` variable below accordingly.
+DATASETD=""

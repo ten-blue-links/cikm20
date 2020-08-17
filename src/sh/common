@@ -1,0 +1,53 @@
+BASE=$(dirname $(dirname $SPATH))
+BIN=$BASE/bin
+AUXDAT=$BASE/dat
+CONFIGD=$BASE/config
+BUILDP=$BASE/build
+DATASETD=$BUILDP/cikm20ltr
+RESULTD=$BUILDP/result
+SCRATCHD=$BUILDP/tmp
+QRELD=$BASE/dat/qrel
+QRYD=$BASE/dat/qry
+TRECD=$BASE/dat/trec
+TRAIND=$SCRATCHD/train
+TRVALD=$SCRATCHD/train-and-valid
+INLINK=$SCRATCHD/inlink.txt
+OUTLINK=$SCRATCHD/outlink.txt
+ALEXARANK=$SCRATCHD/alexarank.txt
+
+log() {
+  echo $1 1>&2
+}
+
+err() {
+  echo "error: $1" 1>&2
+  exit 1
+}
+
+indri_qry() {
+  local outfile=${1}.indri
+  awk -F\; 'BEGIN {
+    print "<parameters>"
+  } {
+    printf "<query><number>%s</number><text>%s</text></query>\n", $1, $2
+  }
+  END {
+    print "</parameters>"
+  }' $1 > $outfile
+}
+
+compile() {
+  local path=$1; shift
+  local cmake_args=$@
+  mkdir -p $path
+  pushd $path
+  cmake $cmake_args ..
+  make -j$JOBS VERBOSE=1
+  popd
+}
+
+mkdir -p $BIN $BUILDP \
+  $DATASETD $SCRATCHD \
+  $QRYD $QRELD \
+  $TRAIND $TRVALD \
+  $RESULTD
