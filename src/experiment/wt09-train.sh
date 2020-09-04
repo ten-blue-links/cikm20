@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -ex
+set -e
 
 SPATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source $SPATH/init
