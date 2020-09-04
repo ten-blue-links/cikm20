@@ -10,16 +10,16 @@ Collections_ from the CIKM 2020 Resource Track.
 
 ## Prerequisites for Building the Dataset
 
-* Indri index of ClueWeb09B (example [config provided][clueindri])
+* Indri index of ClueWeb09B ([example config][clueindri])
 * ~350GiB RAM
 * ~300GiB disk space
-* Webgraph data: [ClueWeb09_WG_50m.graph-txt.gz][graph] and [ClueB-ID-DOCNO.txt.tar.gz][iddocno]
+* Webgraph data [ClueWeb09_WG_50m.graph-txt.gz][graph] and [ClueB-ID-DOCNO.txt.tar.gz][iddocno]. Once downloaded decompress the `ClueB-ID-DOCNO.txt.tar.gz`:
+    - `ClueWeb09B_WG_50m.graph-txt.gz` leave this as is.
+    - `ClueB-ID-DOCNO.txt.tar.gz` decompress to `ClueB-ID-DOCNO.txt`.
 * The [gradle][gradleversion] build system was used for the AlexaRank data
-* gcc 8 (not tested with clang)
-
-[clueindri]: config/clueweb09b.xml
-[graph]: http://boston.lti.cs.cmu.edu/clueweb09/WebGraph/ClueWeb09_WG_50m.graph-txt.gz
-[iddocno]: http://boston.lti.cs.cmu.edu/clueweb09/pagerank/ClueB-ID-DOCNO.txt.tar.gz
+* GCC 8.x (not tested with Clang)
+* Boost (tested with 1.65.1)
+* Cmake 3.x
 
 ## Environment Setup
 
@@ -41,17 +41,31 @@ pip install -r requirements.txt
 ## Build the Dataset
 
 1. Copy configuration template: `cp config/dataset.dist config/dataset`
-2. Edit `config/dataset`
+2. Edit `config/dataset` and configure the following variables:
+    - `INDRI_INDEX_PATH` - path to existing ClueWeb09B Indri index ([example config][clueindri])
+    - `FXT_INDEX_PATH` - path where the Fxt index will be created
+    - `BOOST_INCLUDE_PATH` - path to Boost headers
+    - `BOOST_LIBRARY_PATH` - path to Boost libraries
+    - `INDRI_INCLUDE_PATH` - path to Indri headers
+    - `INDRI_LIBRARY_PATH` - path to Indri libraries
+    - `WEBGRAPH_PATH` - path to `ClueWeb09_WG_50m.graph-txt.gz` (gzipped).
+    - `GRAPHPAIRS_PATH` - path to `ClueB-ID-DOCNO.txt` (decompressed).
 3. Run `./src/dataset/main.sh`
 4. Come back in a day or so...
+5. Dataset files `build/cikm20ltr`
+
+[clueindri]: config/clueweb09b.xml
+[graph]: http://boston.lti.cs.cmu.edu/clueweb09/WebGraph/ClueWeb09_WG_50m.graph-txt.gz
+[iddocno]: http://boston.lti.cs.cmu.edu/clueweb09/pagerank/ClueB-ID-DOCNO.txt.tar.gz
 
 ## Reproduce Experiments
 
-* Run `./src/experiment/main.sh`
-* Come back in ~10 minutes...
-* `cat` the results: `for i in build/result/wt??/test/eval/*.txt; do echo $i; cat $i; done`
+1. Run `./src/experiment/main.sh`
+2. Come back in ~10 minutes...
+3. `cat` the results: `for i in build/result/wt??/test/eval/*.txt; do echo $i; cat $i; done`
+4. TREC run files `build/result/wt??/test/run`
 
-## AlexaRank Data (Notes)
+## AlexaRank Notes
 
 The snapshot for the AlexaRank data is from [2010][alexarank].
 This was the temporally closest working snapshot to Jan-Feb 2009 for
