@@ -3,7 +3,7 @@
 set -e
 
 SPATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-source $SPATH/init
+source $SPATH/common
 
 rm -frv $BUILDP $QRELD $QRYD $BIN
 
