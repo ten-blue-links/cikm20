@@ -14,6 +14,7 @@ run() {
 
 run $SPATH/prelude.sh
 run $BASE/src/sh/trec-data.sh
+run $BASE/src/sh/lgbm.sh
 run $SPATH/wt09-train.sh
 run $SPATH/wt09-test.sh
 run $SPATH/wt10-train.sh
