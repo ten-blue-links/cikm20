@@ -48,11 +48,10 @@ pip install -r requirements.txt
     - `BOOST_LIBRARY_PATH` - path to Boost libraries
     - `INDRI_INCLUDE_PATH` - path to Indri headers
     - `INDRI_LIBRARY_PATH` - path to Indri libraries
-    - `WEBGRAPH_PATH` - path to `ClueWeb09_WG_50m.graph-txt.gz` (gzipped).
-    - `GRAPHPAIRS_PATH` - path to `ClueB-ID-DOCNO.txt` (decompressed).
-3. Run `./src/dataset/main.sh`
-4. Come back in a day or so...
-5. Dataset files `build/cikm20ltr`
+    - `WEBGRAPH_PATH` - path to `ClueWeb09_WG_50m.graph-txt.gz` (gzipped)
+    - `GRAPHPAIRS_PATH` - path to `ClueB-ID-DOCNO.txt` (decompressed)
+3. Run `./src/dataset/main.sh` (build may take ~32 hours)
+4. Dataset files `build/cikm20ltr`
 
 [clueindri]: config/clueweb09b.xml
 [graph]: http://boston.lti.cs.cmu.edu/clueweb09/WebGraph/ClueWeb09_WG_50m.graph-txt.gz
@@ -60,8 +59,11 @@ pip install -r requirements.txt
 
 ## Reproduce Experiments
 
-1. Run `./src/experiment/main.sh`
-2. Come back in ~10 minutes...
+1. Copy configuration template: `cp config/experiment.dist config/experiment`
+    1. If the dataset files are in a different location than the default
+       `build/cikm20ltr` edit `config/experiment` and set `DATASETD` to the
+        correct path
+2. Run `./src/experiment/main.sh`
 3. `cat` the results: `for i in build/result/wt??/test/eval/*.txt; do echo $i; cat $i; done`
 4. TREC run files `build/result/wt??/test/run`
 
