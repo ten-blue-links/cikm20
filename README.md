@@ -81,11 +81,14 @@ ClueWeb09B.
 [guava]: https://github.com/google/guava
 [gradleversion]: https://services.gradle.org/distributions/gradle-5.6.3-bin.zip
 
-## Replicate the LTR Experiments
+## Reproduce the LTR Experiments
 
-The term _replicate_ is defined as per the [ACM artifacts policy][acmdefs].
+The term _reproduce_ is defined as per the [ACM artifacts policy][acmdefs].
+Note the definitions for the terms _replicate_ and _reproduce_ were [recently
+swapped around][wayback] (Aug 2020).
 
 [acmdefs]: https://www.acm.org/publications/policies/artifact-review-and-badging-current
+[wayback]: https://web.archive.org/web/20201006061405/https://www.acm.org/publications/policies/artifact-review-and-badging-current
 
 1. Copy configuration template: `cp config/experiment.dist config/experiment`
     1. If the dataset files are in a different location than the default
