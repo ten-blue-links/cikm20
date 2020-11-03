@@ -4,7 +4,7 @@
 > 2020. Feature Extraction for Large-Scale Text Collections. In Proc. CIKM.
 > DOI: https://doi.org/10.1145/3340531.3412773
 
-This repository contains scripts to build the dataset, and replicate the
+This repository contains scripts to build the dataset, and reproduce the
 experiments from the paper _Feature Extraction for Large-Scale Text
 Collections_ from the CIKM 2020 Resource Track.
 
@@ -100,7 +100,7 @@ swapped around][wayback] (Aug 2020).
 
 ### LambdaMART Effectiveness
 
-The experiment scripts should be able to replicate the following results:
+The experiment scripts should be able to reproduce the following results:
 
 | Test Queries                    | RBP 0.9       | NDCG 5 | NDCG 20 | AP    |
 |---------------------------------|---------------|--------|---------|-------|
