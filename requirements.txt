@@ -1,4 +1,4 @@
-joblib==0.16.0
+joblib==1.2.0
 -e git+https://github.com/microsoft/LightGBM.git@f155379c1fe4e53d5d1c7fd195987a8d3aec4331#egg=lightgbm&subdirectory=python-package
 numpy==1.19.1
 scikit-learn==0.23.2
