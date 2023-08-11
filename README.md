@@ -14,7 +14,7 @@ The dataset is available for download at the links below:
 
 * Release 1.0.1 - [cikm20ltr-1.0.1][v1.0.1] (sha1 `cca713f3d331921f4d5d3093832d5f182da79c25`)
 
-[v1.0.1]: https://cloudstor.aarnet.edu.au/plus/s/FsYRqqu8LeQDwZi/download
+[v1.0.1]: https://drive.google.com/file/d/1EV7kuCvsDj3L5ngBcL_0zSgiZ67Vwf2l/view?usp=drive_link
 
 ## Environment Setup
 
